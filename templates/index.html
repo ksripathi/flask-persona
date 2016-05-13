@@ -1,5 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
+{% if session.name %}
+<br><br><br>
+<div class="col-md-12">
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    Email-id : <b>{{ session.name }}</b><br><br>
+    Choose Role :  <select class="form-control">
+      <option>Guest</option>
+      <option>Admin</option>
+      <option>Owner</option>
+      <option>User</option>
+    </select>
+  </div>
+</div>
+{% else %}
+{% endif %}
 <!--
 {% raw %}
 <div ng-app="outreachApp">
