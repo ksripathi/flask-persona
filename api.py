@@ -15,6 +15,11 @@ api.secret_key = 'djfjsdkjXXS7979dfdfd'
 def index():
     if request.method == 'GET':
         return render_template("index.html")
+@api.route("/role", methods=['GET', 'POST'])
+def role():
+    if request.method == 'POST':
+        role_name = request.form.get('role')
+        return render_template("role.html", role_name=role_name)
 
 
 @api.route("/auth/login", methods=['GET', 'POST'])
