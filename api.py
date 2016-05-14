@@ -21,13 +21,6 @@ def admin():
     if request.method == 'GET':
         return render_template("admin.html")
 
-@api.route("/role", methods=['GET', 'POST'])
-def role():
-    if request.method == 'POST':
-        role_name = request.form.get('role')
-        return render_template("role.html", role_name=role_name)
-
-
 @api.route("/auth/login", methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -37,7 +30,7 @@ def login():
                 'audience': APP_URL}
         resp = requests.post(PERSONA_VERIFIER_URL,
                              data=data, verify=True)
-      
+
         if resp.ok:
             verification_data = resp.json()
         if verification_data['status'] == 'okay':
@@ -56,4 +49,3 @@ def logout_handler():
 
 if __name__ == "__main__":
     api.run(debug=True)
-    
