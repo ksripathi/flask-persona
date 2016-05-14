@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h2>Edit Users</h2>
+    <span class="error"> </span>
+    <form name="myForm" novalidate ng-submit="submit(user_id, nc_id)">
+      <p>User Name:<br>
+        <input type="text" name="user" ng-model="user"
+               ng-pattern="/^[a-zA-Z\s]*$/" class="form-control"  placeholder="Coordinator Name" required>
+	<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+	  <span ng-show="myForm.user.$error.required">Username is
+	    required.</span>
+          <span ng-show="myForm.user.$error.pattern">Enter valid name</span>
+	</span>
+      </p>
+      <input type="submit" value="submit" class="btn btn-primary"  ng-disabled="myForm.$invalid">
+      <a href="#/manage-nc">Cancel</a>
+    </form>
+  </div>
+  <div class="col-md-4"></div>
+</div>

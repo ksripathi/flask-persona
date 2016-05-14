@@ -15,6 +15,12 @@ api.secret_key = 'djfjsdkjXXS7979dfdfd'
 def index():
     if request.method == 'GET':
         return render_template("index.html")
+
+@api.route("/admin", methods=['GET', 'POST'])
+def admin():
+    if request.method == 'GET':
+        return render_template("admin.html")
+
 @api.route("/role", methods=['GET', 'POST'])
 def role():
     if request.method == 'POST':

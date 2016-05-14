@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-10"><h2>User Details</h2></div>
+  <div class="col-md-2">
+    <a onclick="history.back();" role="button" class="btn btn-success btn-large">Back</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-stripped">
+	<thead>
+	  <tr>
+            <th>Name</th>
+	    <th>Action</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr ng-repeat="user in users">
+            <td>{{ user.name }}</td>
+            <td><a href="#/edit-user/{{user.id}}" class="btn btn-primary">Edit</a></td>
+	  </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+

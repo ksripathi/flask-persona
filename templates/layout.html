@@ -39,6 +39,11 @@
     </div>
     {% block content %}
     {% endblock %}
+    <script src="/static/js/angular.min.js"></script>
+    <script type="text/javascript" src="/static/js/factories.js"></script>
+    <script type="text/javascript" src="/static/js/controllers.js"></script>
+    <script src="/static/js/angular-route.js"></script>
+    <script type="text/javascript" src="/static/js/app.js"></script>
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="https://login.persona.org/include.js"></script>
@@ -66,7 +71,7 @@
       success: function(res, status, xhr) { 
       if (res == 'ok')
       {
-      window.location.href = '/';
+      window.location.href = '/admin';
       
       }
       else
@@ -89,13 +94,14 @@
       });
       }
       });
-<!--
-      {% if session.email %}
-      var number  = '{{ session.id }}';
+
+      {% if session.name %}
+      //var number  = '{{ session.id }}';
+      var number = "2";
       {% else %}
       var number = 0
       {% endif %}
--->
+
     </script>
   </body>
 </html>
