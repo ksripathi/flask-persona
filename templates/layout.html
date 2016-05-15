@@ -14,13 +14,7 @@
     <div class="navbar navbar-default navbar-custom">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <<a href=""></a> class="navbar-brand" href="#" onclick="dashboard()"><img src="/static/img/logo.png" class="logo-img"></a>
+          <a href="#" onclick="dashboard()"><img src="/static/img/logo.png" class="logo-img"></a>
 </div>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-form navbar-right">
@@ -72,7 +66,7 @@
   success: function(res, status, xhr) { 
   if (res == 'ok')
   {
-  window.location.href = '/admin';
+  window.location.href = '/users';
   
   }
   else
@@ -99,6 +93,7 @@
   {% if session.name %}
   //var number  = '{{ session.id }}';
   var number = "2";
+  var role_id = "2";
   {% else %}
   var number = 0
   {% endif %}

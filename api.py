@@ -6,7 +6,6 @@ import requests
 from flask import session, render_template, Blueprint, request, jsonify, abort,\
     current_app, redirect, url_for
 from config import *
-
 from flask import Flask, redirect, url_for
 
 api = Flask(__name__)
@@ -16,7 +15,7 @@ def index():
     if request.method == 'GET':
         return render_template("index.html")
 
-@api.route("/admin", methods=['GET', 'POST'])
+@api.route("/users", methods=['GET', 'POST'])
 def admin():
     if request.method == 'GET':
         return render_template("admin.html")
